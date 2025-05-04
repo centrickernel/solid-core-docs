@@ -1,0 +1,40 @@
+name: Deploy VitePress to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write  # ✅ Required for pushing to gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./docs
+
+      - name: Build VitePress site
+        run: npm run build
+        working-directory: ./docs
+
+      - name: Add .nojekyll to disable Jekyll on GitHub Pages
+        run: echo "" > .vitepress/dist/.nojekyll
+        working-directory: ./docs
+        
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # This will automatically create gh-pages branch
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vitepress/dist
