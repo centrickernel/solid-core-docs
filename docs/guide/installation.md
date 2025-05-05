@@ -41,14 +41,14 @@ This guide provides step-by-step instructions for installing the `@centrickernel
 1. **Install the package**:
    Assuming `@centrickernel/solid-core` is available on npm, run:
    ```bash
-   npm install @centrickernel/solid-core@^1.0.0
+   npm install @centrickernel/solid-core@latest --save-dev
    ```
    This installs version `1.0.0` or the latest compatible version within the `^1.0.0` range.
 
 2. **Verify installation**:
    Check `package.json` to confirm the dependency:
    ```json
-   "dependencies": {
+   "devDependencies": {
      "@centrickernel/solid-core": "^1.0.0",
      ...
    }
