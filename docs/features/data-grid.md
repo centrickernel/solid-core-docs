@@ -19,7 +19,7 @@ The primary component for rendering the data grid.
 
 #### Example
 ```tsx
-import { CkDataGrid } from './CkDataGrid';
+import { CkDataGrid } from '@centrickernel/solid-core';
 
 interface Data {
   id: number;

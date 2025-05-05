@@ -24,7 +24,7 @@ The primary component for rendering the tabbed interface.
 
 #### Example (Static Tabs)
 ```tsx
-import { CkTabs } from './CkTabs';
+import { CkTabs } from '@centrickernel/solid-core';
 import { createSignal } from 'solid-js';
 
 const App = () => {
@@ -62,7 +62,7 @@ Defines individual tabs dynamically within `CkTabs` using context-based registra
 
 #### Example (Dynamic Tabs)
 ```tsx
-import { CkTabs, CkTab } from './CkTabs';
+import { CkTabs, CkTab } from '@centrickernel/solid-core';
 
 const App = () => {
   return (

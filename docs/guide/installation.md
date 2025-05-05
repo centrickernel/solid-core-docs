@@ -124,19 +124,15 @@ If `@centrickernel/solid-core` is intended for use with the `CkTabs` component, 
 2. **Use CkTabs with solid-core**:
    Modify `src/App.tsx`:
    ```tsx
-   import { CkTabs, CkTab } from './components/CkTabs';
-   // Hypothetical import from @centrickernel/solid-core
-   import { someUtility } from '@centrickernel/solid-core';
+   import { CkTabs, CkTab } from '@centrickernel/solid-core';
 
    function App() {
-     const enhancedContent = someUtility('Tab 1 Content');
-
      return (
        <div style={{ padding: '20px' }}>
          <h1>Tabbed Interface</h1>
          <CkTabs>
            <CkTab label="Tab 1">
-             <div>{enhancedContent}</div>
+             <div>Content for Tab 1</div>
            </CkTab>
            <CkTab label="Tab 2">
              <div>Content for Tab 2</div>
